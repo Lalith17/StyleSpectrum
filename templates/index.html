@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleSpectrum</title>
+    <style>
+    #uploadForm button {
+    padding: 10px 20px; /* Comfortable size for interaction */
+    background-color: #808080; /* Gray background color to match others */
+    color: white; /* Text color for contrast */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners for consistency */
+    cursor: pointer; /* Pointer cursor to indicate it's clickable */
+    font-size: 16px; /* Font size for readability */
+    font-family: Cursive; /* Matching the font used elsewhere */
+    transition: transform 0.2s, background-color 0.2s; /* Smooth animations */
+}
+
+/* Hover effect */
+#uploadForm button:hover {
+    background-color: #6a6a6a; /* Slightly darker gray on hover */
+    transform: scale(1.05); /* Slight enlargement for hover effect */
+}
+
+/* Active (clicked) effect */
+#uploadForm button:active {
+    background-color: #525252; /* Even darker gray for active state */
+    transform: scale(0.95); /* Slight shrink for a pressed effect */
+}
+
+        body {
+            font-family: Cursive;
+            margin: 0;
+            padding: 0;
+            background-color: #DDD0C8; /* Background color */
+            color: #333;
+        }
+
+        header {
+            background-color: #808080; /* Header color */
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-left {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .header-right {
+            display: flex;
+            gap: 20px;
+            font-size: 18px;
+        }
+
+        main {
+            padding: 40px;
+            text-align: center;
+            top: 80px;
+        }
+
+        #figureFitDescription {
+            display: none; /* Initially hidden */
+            font-size: 18px;
+            padding: 20px;
+            margin-top: 0px;
+            text-align: center;
+            top: 40px;
+            bottom: 40px;
+            font-family: Cursive;
+        }
+
+        .clickable {
+            cursor: pointer;
+        }
+
+        .upload-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px; /* Increased space */
+        }
+
+        .upload-area {
+            border: 2px dashed #808080; /* Dashed border for upload area */
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            background-color: white; /* Optional */
+            margin-bottom: 20px; /* More space below upload area */
+        }
+
+        .extra-upload-area {
+            border: 2px dashed #808080; /* Dashed border for extra images */
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            background-color: white;
+            margin-bottom: 20px; /* Space between image uploads */
+        }
+
+        .output-area {
+            border: 2px solid #808080; /* Solid border for output area */
+            border-radius: 10px;
+            width: 300px;
+            height: 250px; /* Fixed height for display */
+            background-color: #f0f0f0; /* Placeholder background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            color: #333;
+            margin-left: 20px; /* Adjusted space between upload and output */
+        }
+
+        input[type="file"] {
+            display: none; /* Hide the default file input */
+        }
+
+        label {
+            padding: 10px 20px;
+            background-color: #808080; /* Button color */
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .select-option {
+            margin: 80px 0; /* Increased space above and below */
+        }
+
+        .image-container {
+            display: flex; /* Side by side */
+            justify-content: center; /* Center the items */
+            align-items: center; /* Align vertically */
+            gap: 30px; /* Increased space between upload and output */
+        }
+
+        .arrow-container {
+            display: flex;
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+            font-size: 24px; /* Size of the arrow */
+            color: #808080; /* Arrow color */
+            margin: 20px 0; /* Space above and below the arrow */
+        }
+
+        .submit-button {
+            padding: 10px 20px;
+            background-color: #808080; /* Submit button color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px; /* Space above the button */
+        }
+
+        .recommended-outfit {
+            margin-top: 40px; /* Space above the recommended outfit */
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+.why-us {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: 100px; /* Adds space between the items */
+}
+
+.item {
+    text-align: center;
+    width: 200px; /* Matches image size */
+}
+
+.circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto; /* Centers the image */
+}
+
+.circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.description {
+    margin-top: 15px; /* Space between image and text */
+    font-size: 14px;
+    color: #333;
+}
+
+
+
+        .description:nth-child(1) {
+            left: 260px; /* Adjust 'left' to move the first description */
+            top: 62px;
+        }
+
+        .description:nth-child(2) {
+            left: 590px; /* Adjust this value to move the second description */
+            top: 62px;
+        }
+
+        .description:nth-child(3) {
+            left: 930px; /* Adjust this value to move the third description */
+            top: 62px;
+        }
+
+        .back-button {
+            padding: 10px 20px;
+            background-color: #808080; /* Back button color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+            bottom: -295px; /* Position it at the bottom */
+            right: 20px; /* Position it at the right */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left">StyleSpectrum</div>
+        <div class="header-right">
+            <div class="clickable" id="figureFit">Outfit Generator</div>
+            <!-- <div class="clickable" id="aboutUs">About Us</div> -->
+        </div>
+    </header>
+
+    <!-- Main content section -->
+    <main id="mainContent">
+        <h1>Welcome to StyleSpectrum</h1>
+        <p>Your go-to place for finding the perfect outfits that match your style, figure, and fit.</p>
+        
+        <h2 style="margin-top: 40px;">Why Us?</h2>
+        
+<div class="why-us">
+    <div class="item">
+        <div class="circle">
+            <img src="{{ url_for('static', filename='013a7c22f9d7170bdcc2dd3eafe04640.jpg') }}" alt="Image 1">
+        </div>
+        <div class="description">
+            Stay ahead of the fashion curve with StyleSpectrum! Get outfit recommendations and insights into the latest
+            trends.
+        </div>
+    </div>
+    <div class="item">
+        <div class="circle">
+            <img src="{{ url_for('static', filename='414b5459-e71b-4c50-8908-a5dbb8f4bef6_1.jpeg.jpg') }}" alt="Image 2">
+        </div>
+        <div class="description">
+            Discover casual and formal styles tailored to your preferences, ensuring you always look your best!
+        </div>
+    </div>
+    <div class="item">
+        <div class="circle">
+            <img src="{{ url_for('static', filename='1da55a48491da1fc51cec0ffeb1e8338.jpg') }}" alt="Image 3">
+        </div>
+        <div class="description">
+            StyleSpectrum uses AI to suggest outfits that suit your style and body.
+        </div>
+    </div>
+</div>
+    </main>
+
+    <!-- Figure and Fit description section -->
+    <div id="figureFitDescription">
+        <h1>Outfit Generator</h1>
+        <p>Our recommendations are tailored to your figure, ensuring both comfort and style. Discover styles that enhance your natural silhouette for a perfect fit.</p>
+
+        <!-- Image upload container -->
+        <form id="uploadForm" action="/recommend" method="POST" enctype="multipart/form-data">
+            <label for="base_image">Step 1: Upload an image of your shirt or pants</label>
+            <input type="file" name="base_image" id="base_image" required>
+            <p class="info">This is the item you want to base your outfit on. Choose one clear image.</p>
+            <br><br>
+        
+            <label for="options">Step 2: Upload multiple images of shirts or pants to match with</label>
+            <input type="file" name="options" id="options" multiple required>
+            <p class="info">These are the items you want StyleSpectrum to compare and recommend from. You can upload several
+                options.</p>
+            <br><br>
+        
+            <button type="submit">Get Your Outfit Recommendation</button>
+        </form>
+        
+        <p class="note">Please ensure the images are clear and in appropriate formats (e.g., JPEG, PNG).</p>
+    </div>
+
+    <script>
+        // Function to show Figure and Fit section
+    document.getElementById("figureFit").addEventListener("click", function () {
+        if (this.innerHTML === "Home") {
+            backToHome();
+            this.innerHTML = "Outfit Generator"; // Change back to "Outfit Generator"
+        } else {
+            this.innerHTML = "Home"; // Change the text to "Home"
+            document.getElementById("figureFitDescription").style.display = "block";
+            document.getElementById("mainContent").style.display = "none";
+        }
+    });
+
+// Function to return to the homepage
+function backToHome() {
+    document.getElementById("figureFitDescription").style.display = "none";
+    document.getElementById("mainContent").style.display = "block";
+}
+</script>
+</body>
+</html>

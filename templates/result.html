@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recommendation Result</title>
+  <style>
+    body {
+      font-family: Cursive;
+      margin: 0;
+      padding: 0;
+      background-color: #DDD0C8;
+      /* Matches the main page background */
+      color: #333;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 40px;
+      font-size: 28px;
+      color: #808080;
+      /* Matches the other headings' color */
+    }
+
+    .recommendation-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      /* Space between the two sections */
+      margin-top: 30px;
+    }
+
+    .image-container {
+      width: 300px;
+      /* Fixed width for consistency */
+      text-align: center;
+      border: 2px solid #808080;
+      /* Border for image sections */
+      border-radius: 10px;
+      padding: 20px;
+      background-color: white;
+      /* Background for image sections */
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+      /* Subtle shadow for depth */
+    }
+
+    .image-container h3 {
+      font-size: 20px;
+      color: #808080;
+      /* Matches the overall theme */
+      margin-bottom: 10px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      /* Rounded corners for images */
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: #808080;
+      /* Matches button colors */
+      color: white;
+      text-decoration: none;
+      /* Remove underline */
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.2s;
+    }
+
+    a:hover {
+      background-color: #6a6a6a;
+      /* Slightly darker on hover */
+      transform: scale(1.05);
+      /* Slight enlargement */
+    }
+
+    a:active {
+      background-color: #525252;
+      /* Even darker on click */
+      transform: scale(0.95);
+      /* Slight shrink on click */
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Recommended Outfit</h1>
+
+  <div class="recommendation-container">
+    <div class="image-container">
+      <h3>Uploaded Shirt:</h3>
+      <img src="{{ input }}" alt="Uploaded Shirt">
+    </div>
+
+    <div class="image-container">
+      <h3>Recommended Pants:</h3>
+      <img src="{{ filename }}" alt="Recommended Pants">
+    </div>
+  </div>
+
+  <a href="/">Go Back</a>
+</body>
+
+</html>
